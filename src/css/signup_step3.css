@@ -91,29 +91,29 @@ body {
 }
 
 .gender-group{
-    position: relative;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.gender-group{
+    justify-content: space-around;
+    display: flex;
     margin-top: 10px;
-    text-align: center;
-    display: inline-block;
 }
 
-#gender{
-    background-image: url('../images/checkmark-off.png');
+.gender-group label{
+    display: flex;
+    align-items: center;
 }
 
-input:checked + #gender{
-    background-image: url('../images/checkmark-on.png');
-}
-
-.gender-group input[type='radio']{
-    /* display: none; */
+.gender-group label input{
+    display: none;
 }
 
 .checkbox-custom{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 10px;
+    background-image: url('../images/checkmark-off.png');
+}
 
+input[type='radio']:checked + .checkbox-custom{
+    background-image: url('../images/checkmark-on.png');
 }

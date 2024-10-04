@@ -13,17 +13,19 @@
             <p>50대 이상인지 확인할게요!</p>
         </header>
         <form action="signup_step4.html" post="get">
-            <div class="gender-group" onclick="handlenextdisabled()">
-                <label>성별
-                    <input type="radio" value="male" name="male" id="gender">
-                    <span class="checkbox-custom" id="gender-male" >남성</span>
-                </label>
-                <label>
-                    <input type="radio" value="female" name="female" id="gender">
-                    <span class="checkbox-custom" id="gender-female" >여성</span>
-                </label>
+            <div class="input-group">
+                <label>성별</label>
+                <div class="gender-group" onclick="handlenextdisabled()">
+                    <label>
+                        <input type="radio" value="male" name="gender">
+                        <span class="checkbox-custom" id="gender-male" ></span> 남성
+                    </label>
+                    <label>
+                        <input type="radio" value="female" name="gender">  
+                        <span class="checkbox-custom" id="gender-female" ></span> 여성
+                    </label>
+                </div>
             </div>
-
             <div class="input-group">
                 <label>생년월일</label>
                 <input type="number" id="birth" name="birth" placeholder="생년월일 8자리"  readonly>
