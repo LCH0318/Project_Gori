@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup_step1</title>
+    <link rel="stylesheet" href="../../css/signup_step1.css">
+</head>
+<body>
+    <div class="login_container">
+        <header>
+            <span>🙏</span>
+            <p>50대 이상인지 확인할게요!</p>
+        </header>
+        <form action="signup_step2.html" method="get">
+            <div class="input-group">
+                <label>이름</label>
+                <input type="text" id="name" name='name' placeholder="이름을 입력해주세요!" oninput="handleclearhidden()">
+                <button type="button" id="clear-btn" class="hidden" onclick="handleclear()">X</button>
+            </div>
+            <button type="submit" id="next-btn" class="disabled" disabled>다음</button>
+        </form>
+    </div>
+    <script src="../../js/signup_step1.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup_step3</title>
+    <link rel="stylesheet" href="../../css/signup_step3.css">
+</head>
+<body>
+    <div class="login_container">
+        <header>
+            <span>🙏</span>
+            <p>50대 이상인지 확인할게요!</p>
+        </header>
+        <form action="signup_step4.html" post="get">
+            <div class="gender-group" onclick="handlenextdisabled()">
+                <label>성별
+                    <input type="radio" value="male" name="male" id="gender">
+                    <span class="checkbox-custom" id="gender-male" >남성</span>
+                </label>
+                <label>
+                    <input type="radio" value="female" name="female" id="gender">
+                    <span class="checkbox-custom" id="gender-female" >여성</span>
+                </label>
+            </div>
+
+            <div class="input-group">
+                <label>생년월일</label>
+                <input type="number" id="birth" name="birth" placeholder="생년월일 8자리"  readonly>
+            </div>
+            <div class="input-group">
+                <label>이름</label>
+                <input type="text" id="name" name="name" placeholder="이름을 입력해주세요!" readonly>
+            </div>
+            <button type="submit" id="next-btn" class="disabled" disabled>다음</button>
+        </form>
+    </div>
+    <script src="../../js/signup_step3.js"></script>
+</body>
+</html>
