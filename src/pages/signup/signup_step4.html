@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup_step4
+    </title>
+    <link rel="stylesheet" href="../../css/signup_step4.css">
+</head>
+<body>
+    <div class="login_container">
+        <header>
+            <span>🙏</span>
+            <p>50대 이상인지 확인할게요!</p>
+        </header> 
+        <form action="singup_step5.html" method="get">
+            <div class="input-group" id="phone">
+                <label>휴대폰번호</label>
+                <input type="phone" maxlength="11" name="phoneNumber" id="input_number" placeholder="휴대폰 번호를 입력해주세요!" oninput="phonenumber()">
+            </div>
+
+            <div class="call-group">
+                <button id="openSheetBtn">어디 통신사를 쓰시나요? <img id="disabled_btn" class="hidden "src="../../images/edit_24px.png"/></button>  
+                <input type="text" id="hidden" name = "phone_call">
+            </div>
+
+            <div class="input-group">
+                <label>성별</label>
+                <div class="gender-group">
+                    <label>
+                        <input type="radio" value="male" name="gender" id="male" readonly>
+                        <span class="checkbox-custom" id="gender-male" ></span> 남성
+                    </label>
+                    <label>
+                        <input type="radio" value="female" name="gender" id="female" readonly>  
+                        <span class="checkbox-custom" id="gender-female" ></span> 여성
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>생년월일</label>
+                <input type="number" id="birth" name="birth" placeholder="생년월일 8자리"  readonly>
+            </div>
+
+            <div class="input-group">
+                <label>이름</label>
+                <input type="text" id="name" name="name" placeholder="이름을 입력해주세요!" readonly>
+            </div>
+            <button type="submit" id="next-btn" class="disabled" disabled>다음</button>
+        </form>
+
+        <div id="bottomSheet" class="bottom-sheet">
+            <div class="bottomSheet-content"></div>
+                <div class="handle">
+                </div>
+                    <ul>
+                        <li>SKT</li>
+                        <li>KT</li>
+                        <li>LG U+</li>
+                        <li>SKT 알뜰폰</li>
+                        <li>KT 알뜰폰</li>
+                        <li>LG U+ 알뜰폰</li>
+                    </ul>
+        </div>
+
+    </div>
+    <script src="../../js/signup_step4.js"></script>
+</body>
+</html>
