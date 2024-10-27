@@ -1,13 +1,3 @@
-document.getElementById("openSheetBtn").addEventListener('click', function(e){
-    e.preventDefault();
-    const bottomSheet = document.getElementById("bottomSheet");
-    const bottomSheetContent = document.getElementsByClassName('bottomSheet-content')[0];
-    const contentHeight = bottomSheetContent.offsetHeight - 20;
-    console.log(contentHeight);
-    bottomSheet.style.height = `${contentHeight}px`;
-    bottomSheet.classList.add("active");
-})
-
 document.getElementById("bottomSheet").addEventListener('click',  function(event){
     if(event.target.tagName.toLowerCase() == "li"){
         document.getElementById("disabled_btn").classList.remove('hidden');
@@ -21,18 +11,6 @@ document.getElementById("bottomSheet").addEventListener('click',  function(event
         bottomSheet.classList.remove('active');
     }
 });
-
-function phonenumber(){
-    const inputNumber = document.getElementById("input_number");
-    const nextBtn = document.getElementById("next-btn");
-    if(inputNumber.value.length === 11){
-        nextBtn.classList.remove("disabled");
-        nextBtn.disabled = false;
-    }
-}
-window.onload = function(){
-    document.getElementById('openSheetBtn').textContent = localStorage.getItem('phone');
-}
 
 const currentUrl = document.location.href;
 const searchParam1 = new URL(currentUrl).searchParams;
@@ -58,3 +36,58 @@ const currentUrl5 = document.location.href;
 const searchParam5 = new URL(currentUrl5).searchParams;
 const phone_call = searchParam5.get('phone_call');
 document.getElementById("openSheetBtn").childNodes[0].textContent = phone_call;
+
+document.querySelectorAll("input[type='radio']").forEach(b => b.addEventListener("click", function(e) { console.log(b); e.preventDefault(); return false }));
+
+function parse(str) {
+    if(!/^(\d){8}$/.test(str)) return "invalid date";
+    var y = str.substr(0,4),
+        m = str.substr(4,2),
+        d = str.substr(6,2);
+    return new Date(y,m,d);
+}
+
+function calcAge(birthDate){
+    var birthYear = birthDate.getFullYear();
+    var birthMonth = birthDate.getMonth();
+    var birthDay = birthDate.getDate();
+
+    var currentDate = new Date();
+    var currentYear = currentDate.getFullYear();
+    var currnetMonth = currentDate.getMonth();
+    var currnetDay = currentDate.getDate();
+
+    var age = currentYear - birthYear;
+
+    if(currnetMonth < birthMonth){
+        age--;
+    }
+
+    else if(currnetMonth === birthMonth && currnetDay < birthDay){
+        age--;
+    }
+    return age;
+}
+
+document.getElementById('next-btn').addEventListener("click", function(e) {
+    e.preventDefault();
+    const birth = document.getElementById('birth').value;
+    const birthDate = parse(birth);
+    const age = calcAge(birthDate);
+    if(age < 50){
+        const toast = document.getElementById('tost_message');
+        toast.classList.add('active');
+
+        setTimeout(function() {
+            toast.classList.remove("active");
+          }, 2000);
+    }else{
+        const toast = document.getElementById('tost_false_message');
+        toast.classList.add('active');
+
+        setTimeout(function() {
+            toast.classList.remove("active");
+          }, 2000);
+    }
+});
+

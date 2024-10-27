@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create</title>
+    <link rel="stylesheet" href="../../css/create_squad.css">
+</head>
+<body>
+    <form>
+        <header class="title">
+            <p>모임글 생성</p>
+        </header>
+
+        <div class="titleName">
+            <textarea placeholder="만들고 싶은 모임의 이름을 입력해주세요." onkeydown="title_keydown()" id="title"></textarea>
+        </div>
+
+        <div class="example">
+            <p>예시 문구 : 파크골프 치러 가실분~</p>
+            <hr>
+        </div>
+
+        <div class="theme">
+            <label>주제</label>
+            <div>
+                <button>건강/운동</button>
+                <button>맛집/카페</button>
+                <button>나들이/여행</button>
+                <button>제테크</button>
+                <button>일상</button>
+                <button>기타</button>
+            </div>
+            <hr>
+        </div>
+
+        <div class="squad_plan">
+            <div class='bottom-sheet-height' ><div>어디서 모일까요?</div><img src="../../images/cursor.png"></div>
+            <hr>
+            <div class="bottom-sheet-height"><div>언제 모일까요?</div> <img src="../../images/cursor.png"></div>
+            <hr>
+            <div class="bottom-sheet-height"><div>몇시에 모일까요?</div> <img src="../../images/cursor.png"></div>
+            <hr>
+        </div>
+
+        <div class="bottom-sheet">
+            <div class="bottom-sheet-content"  id="bottomSheet">
+                <div class="city_handle"></div>
+                <div id="img_header"><img src="../../images/map.png"><p>어디서 모일까요?</p></div>
+                <div id="citys_list"></div>
+                <button class="complete_button" disabled>선택 완료</button>
+            </div>
+        </div>
+
+        <div class="bottom-sheet">
+            <div class="bottom-sheet-content"  id="bottomSheet2">
+                <div class="calender_handle"></div>
+                <div id="img_header"><img src="../../images/calendar.png"><p>언제 모일까요?</p></div>
+                <div id="calendar"></div>
+                <button class="complete_button" disabled>선택 완료</button>
+            </div>
+        </div>
+
+        <div class="bottom-sheet">
+            <div class="bottom-sheet-content">
+                <div id="img_header"><img src="../../images/map.png"><p>상세 지역도 선택해주세요</p></div>
+                <div id="regions_list"></div>
+                <button class="complete_button" disabled>선택 완료</button>
+            </div>
+        </div>
+
+        
+
+    </form>
+    <script src="../../js/creat_squad.js"></script>
+</body>
+</html>

@@ -16,11 +16,11 @@
         <form>
             <div class="input-group" id="phone">
                 <label>휴대폰번호</label>
-                <input type="phone" maxlength="11" id="input_number" placeholder="휴대폰 번호를 입력해주세요!" oninput="phonenumber()">
+                <input type="phone" maxlength="11" id="input_number" placeholder="휴대폰 번호를 입력해주세요!" oninput="phonenumber()" readonly>
             </div>
 
             <div class="call-group">
-                <button id="openSheetBtn">어디 통신사를 쓰시나요? <img id="disabled_btn" class="hidden "src="../../images/edit_24px.png"/></button>  
+                <button id="openSheetBtn" onclick="return false;">어디 통신사를 쓰시나요? <img id="disabled_btn" class="hidden "src="../../images/edit_24px.png"/></button>  
             </div>
 
             <div class="input-group">
@@ -31,7 +31,7 @@
                         <span class="checkbox-custom" id="gender-male" ></span> 남성
                     </label>
                     <label>
-                        <input type="radio" value="female" name="gender" id="female">  
+                        <input type="radio" value="female" name="gender" id="female">
                         <span class="checkbox-custom" id="gender-female" ></span> 여성
                     </label>
                 </div>
@@ -39,14 +39,22 @@
 
             <div class="input-group">
                 <label>생년월일</label>
-                <input type="number" id="birth" name="birth" placeholder="생년월일 8자리"  >
+                <input type="number" id="birth" name="birth" placeholder="생년월일 8자리"  readonly>
             </div>
 
             <div class="input-group">
                 <label>이름</label>
-                <input type="text" id="name" name="name" placeholder="이름을 입력해주세요!" >
+                <input type="text" id="name" name="name" placeholder="이름을 입력해주세요!" readonly>
             </div>
-            <button type="submit" id="next-btn" class="disabled" disabled>다음</button>
+            <button type="button" id="next-btn" value="다음">다음</button>
+            
+            <div id="tost_message">
+                고리는 50세 이상부터 가입하실 수 있어요
+            </div>
+
+            <!-- <div id="tost_false_message">
+                입력하신 정보를 다시 확인해주세요!
+            </div> -->
         </form>
 
         <div id="bottomSheet" class="bottom-sheet">

@@ -1,0 +1,190 @@
+.title p{
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.titleName textarea{
+    margin-top: 30px;
+    border: 1px solid #fff;
+    font-size: 20px;
+    font-weight: 300;
+    width: 100%;
+    display: flex;
+}
+
+.example p{
+    font-size: 15px;
+    margin-top: 30px;
+    font-weight: 100;
+}
+
+.example hr{
+    margin-top: 20px;
+    height: 0.1px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.theme label{
+    font-size: 15px;
+}
+
+.theme div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.theme div button{
+    display: flex;
+    margin: 3px 3px;
+    border-radius: 20px;
+    background-color: #F1F2F3;
+    border: none;
+    color: #ACB4B9;
+    height: 35px;
+    padding: 8px 16px;
+
+}
+
+.theme hr{
+    margin-top: 20px;
+    height: 0.1px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.squad_plan > div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.squad_plan div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.squad_plan img{
+    margin-top: 10px;
+    height: 20px;
+}
+
+.bottom-sheet{
+    position: fixed;
+    bottom: -150%;
+    width: 100%;
+    left: 0px;
+    transition: bottom 0.7s ease;
+    background-color: #fff;
+}
+
+.city_handle{
+    display: flex;
+    justify-self: center;
+    top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 3px;
+    width: 50px;
+}
+
+#citys_list{
+    text-align: center;
+}
+
+#citys_list input{
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 5px 3px;
+    font-size: 15px;
+    padding: 8px 16px;
+}
+
+#citys_list input.active{
+    background-color: #E4DEFE;
+    color: #5343D7;
+}
+
+#regions_list input.active{
+    background-color: #E4DEFE;
+    color: #5343D7;
+}
+
+#regions_list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+#regions_list input{
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 5px 3px;
+    font-size: 15px;
+    padding: 8px 16px;
+}
+
+.bottom-sheet.active{
+    bottom: 0;
+    overflow: auto; 
+}
+
+#img_header{
+    display: flex;
+}
+
+#img_header img{
+    width: 40px;
+    height: 30px;
+    margin: 15px;
+    margin-left: 25px;
+}
+
+#img_header p{
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.complete_button{
+    border: none;
+    font-size: 15px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    padding: 16px 20px;
+    background-color: #ACB4B9;
+    transition: bottom 0.7s ease;
+    color: #FFFFFF;
+}
+
+.complete_button{
+    bottom: -150%;
+}
+
+.bottom-sheet.active .complete_button{
+    bottom: 0;
+}
+
+#bottomSheet .active{
+    background-color: #6F5CFA;
+}
+
+/* #regions_list input.active{
+    background-color: #E4DEFE;
+    color: #5343D7;
+} */
+
+.calender_handle{
+    display: flex;
+    justify-self: center;
+    top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 3px;
+    width: 50px;
+}
