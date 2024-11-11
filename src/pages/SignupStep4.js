@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import "../css/signup_step4.css";
 
@@ -8,8 +8,43 @@ const SignupStep4 = () => {
     const name = params.get('name');
     const birth = params.get('birth');
     const gender = params.get('gender');
+    const bottomSheetRef = useRef(null);
+    const bottomSheetContentRef = useRef(null);
 
-    const bottomSheet = document.querySelector("#bottomSheet");   
+    const [telProvider, setTelProvider] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [isNextDisabled, setIsNextDisabled] = useState(true);
+
+    // const bottomSheet = document.querySelector("#bottomSheet");   
+
+    const handlePhoneNumberChange = (e) => {
+        const input = e.target.value;
+        if (input.length <= 11) {
+            setPhoneNumber(input);
+        }
+    };
+
+    const openBottomSheet = () => {
+        if (bottomSheetRef.current) {
+            bottomSheetRef.current.classList.add("active");
+        }
+    };
+
+    const handleBottomSheetClick = (e) => {
+        if (e.target.tagName.toLowerCase() === 'li') {
+            const telProviderName = e.target.innerText;
+            setTelProvider(telProviderName);
+            if (bottomSheetRef.current) {
+                bottomSheetRef.current.classList.remove("active");
+            }
+        } else if (bottomSheetRef.current) {
+            bottomSheetRef.current.classList.remove("active");
+        }
+    };
+
+    useEffect(() => {
+        setIsNextDisabled(phoneNumber.length < 10);
+    }, [phoneNumber]);
 
     return(
         <>
@@ -21,11 +56,14 @@ const SignupStep4 = () => {
                 <form>
                     <div className="input-group" id="phone">
                         <label>휴대폰번호</label>
-                        <input type="phone" maxlength="11" name="phoneNumber" id="input_number" placeholder="휴대폰 번호를 입력해주세요!" oninput="phonenumber()"/>
+                        <input type="phone" maxLength="11" name="phoneNumber" id="input_number" placeholder="휴대폰 번호를 입력해주세요!" onChange={handlePhoneNumberChange}/>
                     </div>
 
                     <div className="call-group">
-                        <button type = "button" id="openSheetBtn" onClick={() => bottomSheet.classList.add('active')}>어디 통신사를 쓰시나요? <img id="disabled_btn" className="hidden "src="../../images/edit_24px.png"/></button>  
+                        <button type = "button" id="openSheetBtn" onClick={openBottomSheet}>
+                            {telProvider || "어디 통신사를 쓰시나요?"}
+                            <img id="disabled_btn" className={telProvider ? "hidden" : ""} src="../../images/edit_24px.png"/>
+                        </button>  
                         <input type="text" id="hidden" name = "phone_call"/>
                     </div>
 
@@ -52,11 +90,11 @@ const SignupStep4 = () => {
                         <label>이름</label>
                         <input type="text" id="name" name="name" value={name} placeholder="이름을 입력해주세요!" readOnly/>
                     </div>
-                    <button type="submit" id="next-btn" className="disabled" disabled>다음</button>
+                    <button type="submit" id="next-btn" className={isNextDisabled ? "disabled" : ""} disabled={isNextDisabled}>다음</button>
                 </form>
 
-                <div id="bottomSheet" className="bottom-sheet">
-                    <div className="bottomSheet-content"></div>
+                <div id="bottomSheet" className="bottom-sheet" ref={bottomSheetRef} onClick={handleBottomSheetClick}>
+                    <div className="bottomSheet-content" ref={bottomSheetContentRef}></div>
                         <div className="handle"></div>
                             <ul>
                                 <li>SKT</li>
