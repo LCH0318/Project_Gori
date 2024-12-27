@@ -1,0 +1,44 @@
+.container{
+    width: 100vw;
+}
+
+.container p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.social-login-list {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 16px;
+}
+
+.social-login-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.social-login-item img{
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.social-login-item span {
+    flex-grow: 1;
+}
+
+.social-login-item button{
+    border: none;
+    border-radius: 10px;
+    background-color: #E4DEFE;
+    color: #5343D7;
+    padding: 5px 10px 5px 10px;
+    /* position: absolute; */
+    /* right: 0%; */
+    margin-right: 10px;
+}

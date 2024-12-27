@@ -1,7 +1,7 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 import { jwtDecode } from "jwt-decode";
-import "../css/login.css";
+import styles from "../css/Login.module.css";
 import KakaoLogin from "react-kakao-login";
 // import NaverLogin from "../components/NaverLogin";
 // import LoginNaver from "react-naver-login";
@@ -46,14 +46,26 @@ const Login = () => {
         handleLogin("Google", sub, email);        
     }
 
+    const findAcount = () =>{
+        navigate("/FindAccount");
+    }
+
+    useEffect(() => {
+        const bodyStyle = document.body.style.cssText;
+        document.body.style.justifyContent = "center";
+        return () => {
+            document.body.style.cssText = bodyStyle;
+        };
+    });
+
     return (
         <>
             <div className="login_container">
                 <div className="logo">
                     <img src="/images/logo.png" alt = "404" id="logo" />
                 </div>
-                <div className="recent_login">
-                    <p>이전에 가입한 적이 있으신가요?</p>
+                <div className={styles["recent_login"]}>
+                    <button onClick={() => findAcount()}><img src="/images/ic_alert.png"></img>이전에 가입한 적이 있으신가요?</button>
                 </div>
                 <div>
                     <KakaoLogin

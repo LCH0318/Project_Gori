@@ -1,0 +1,16 @@
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 17px;
+    color: #919BA1;
+}
+
+.nav-item.active span {
+    color: #525B61;
+}
+
+.nav-icon {
+    width: 18px;
+    height: 18px;
+}

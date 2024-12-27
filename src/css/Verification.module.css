@@ -1,0 +1,175 @@
+.next_btn{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.next_btn.disable{
+    background-color: #ddd;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.input-group{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input{
+    width: 80%;
+    padding: 5px;
+    padding-right: 40px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.textBtn button{
+    height: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #9a9af4;
+    color: white;
+    display: flex;
+}
+
+.textBtn button div{
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+.next_btn{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+.next_btn:disabled{
+    background-color: #ddd;
+    color: #888;
+    cursor: not-allowed;
+}
+
+.next_btn:not(.disabled){
+    background-color: #9a9af4;
+    color:white;
+    
+}
+.next_btn:not(.disabled):hover{
+    background-color: #7b7bd4;
+}
+
+.checkBox_custom{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 10px;
+    background-image: url('../../public/images/checkbox_off.png');
+}
+
+input[type='checkbox']:checked + .checkBox_custom{
+    background-image: url('../../public/images/checkmark_on.png');
+}
+
+label input[type="checkbox"]{
+    display: none;
+}
+
+.bottomSheet{
+    position: fixed;
+    bottom: -100%;
+    width: 100%;
+    left: 0;
+    font-size:12px;
+    /* height: 80%; */
+    background-color: white;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: bottom 0.7s ease;
+}
+
+.useRef{
+    padding: 10px;
+}
+
+.useRef>div{
+    margin-bottom: 10px;
+}
+
+.useRef> div:nth-child(2) {
+    font-size: 14px;
+}
+
+.useRef>div:first-child {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.useRef>div:first-of-type label {
+    font-size: 20px;
+}
+
+.bottomSheet.active {
+    bottom: 0;
+}
+
+.startGory{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    height: 60px;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #9a9af4;
+    color:white;
+
+}
+
+.startGory.disabled{
+    background-color: #ACB4B9;
+}
+
+.toast_message{
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    /* transform: translate(-50%,-50%); */
+    transition: opacity 0.5s ease, top 0.5s ease;
+    padding: 10px 50px;
+    margin-left: 12px;
+    margin-right: 12px;
+    background: rgba(0, 0, 0, 0.70);
+    border-radius: 100px;
+    color: #fff;
+    box-shadow: 3px 4px 11px 0px #00000040;
+}
+
+.toast_message.active{
+    opacity: 1;
+    display: block;
+}
+
+.red {
+    color: red;
+}

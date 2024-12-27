@@ -1,0 +1,50 @@
+.container {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: calc(100vw - 40px);
+    /* width: 100vw; */
+}
+
+.input-group input{
+    margin-top: 30px;
+    font-size: 16px;
+    border: none;
+    border-bottom: solid 1px;
+    width: 100%;
+    /* width: calc(100% - 20px); */
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-bottom: 1px black solid;
+}
+
+.input-group button{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 10px;
+    top: 125px;
+}
+
+.completeBtn button{
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 100%;
+    background-color: #ACB4B9;
+    position: absolute;
+    bottom:0%;
+    border: none;
+    height: 45px;
+}
+
+.completeBtn button.active{
+    color: #FFFFFF;
+    background-color: #6F5CFA;
+}   
+
+.red{
+    color: red;
+}

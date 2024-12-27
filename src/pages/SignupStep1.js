@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import "../css/signup_step1.css";
+import styles from "../css/SignupStep1.module.css";
 
 const SignupStep1 = () => {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
 
-    const email = params.get("e");
-    const provider = params.get("prov");
-    const providerId = params.get("provId");
+    const email = params.get("e") ?? "test@test.com";
+    const provider = params.get("prov") ?? "KAKAO";
+    const providerId = params.get("provId") ?? "1000100";
 
     const [name, setName] = useState("");
     const [isNameEmpty, setIsNameEmpty] = useState(false);
@@ -21,18 +21,20 @@ const SignupStep1 = () => {
 
     return (
         <>
-            <div className="login_container">
+            <div className={styles["login_container"]}>
                 <header>
                     <span>🙏</span>
                     <p>50대 이상인지 확인할게요!</p>
                 </header>
                 <form action="SignupStep2" method="get">
-                    <div className="input-group">
+                    <div className={styles["input-group"]}>
                         <label>이름</label>
-                        <input type="text" id="name" name='name' placeholder="이름을 입력해주세요!" value={name} onChange={(e) => setName(e.target.value)}/>
-                        <button type="button" id="clear-btn" className={isNameEmpty ? "hidden" : ""} onClick={() => setName("")}>X</button>
+                        <input type="text" className={styles["name"]} name='name' placeholder="이름을 입력해주세요!" value={name} onChange={(e) => setName(e.target.value)}/>
+                        <label>이메일</label>
+                        <input type="text" className={styles["email"]} name='email'value={email} readOnly/>
+                        <button type="button" className={styles["clear-btn"]} hidden={isNameEmpty} onClick={() => setName("")}>X</button>
                     </div>
-                    <button type="submit" id="next-btn" className={isNameEmpty ? "disabled" : ""} disabled={isNameEmpty}>다음</button>
+                    <button type="submit" className={styles["next-btn"]} disabled={isNameEmpty}>다음</button>
                 </form>
             </div>
         </>
