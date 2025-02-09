@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.container div {
+    border: none;
+    border-bottom: #919BA1 1px solid;
+}
+
+.container button {
+    width: 100%;
+    font-size: 18px;
+    height: 10px;
+    border: none;
+    color: #919BA1;
+    background-color: transparent;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.container div.active {
+    border-bottom: #232729 1px solid;
+}
+
+.container div.active button {
+    color: #232729;
+}

@@ -1,0 +1,14 @@
+.locationButton {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 10px;
+}
+
+.locationButton button {
+    border: none;
+    border-color: #E4DEFE;
+    border-radius: 50px;
+    color: #5343D7;
+    display: flex;
+
+}

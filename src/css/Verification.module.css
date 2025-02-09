@@ -1,4 +1,4 @@
-.next_btn{
+.next_btn {
     width: 100%;
     padding: 10px;
     border: none;
@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.next_btn.disable{
+.next_btn.disable {
     background-color: #ddd;
     color: #888;
     cursor: not-allowed;
@@ -20,12 +20,12 @@
     width: 100%;
 }
 
-.input-group{
+.input-group {
     position: relative;
     margin-bottom: 20px;
 }
 
-.input-group input{
+.input-group input {
     width: 80%;
     padding: 5px;
     padding-right: 40px;
@@ -35,7 +35,7 @@
     margin-top: 10px;
 }
 
-.textBtn button{
+.textBtn button {
     height: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -44,37 +44,38 @@
     display: flex;
 }
 
-.textBtn button div{
+.textBtn button div {
     margin-top: 3px;
     margin-left: 10px;
 }
 
-.next_btn{
+.next_btn {
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 0;
     font-size: 16px;
     cursor: pointer;
-    
+
 }
 
-.next_btn:disabled{
+.next_btn:disabled {
     background-color: #ddd;
     color: #888;
     cursor: not-allowed;
 }
 
-.next_btn:not(.disabled){
+.next_btn:not(.disabled) {
     background-color: #9a9af4;
-    color:white;
-    
+    color: white;
+
 }
-.next_btn:not(.disabled):hover{
+
+.next_btn:not(.disabled):hover {
     background-color: #7b7bd4;
 }
 
-.checkBox_custom{
+.checkBox_custom {
     width: 20px;
     height: 20px;
     display: inline-block;
@@ -83,20 +84,20 @@
     background-image: url('../../public/images/checkbox_off.png');
 }
 
-input[type='checkbox']:checked + .checkBox_custom{
-    background-image: url('../../public/images/checkmark_on.png');
+input[type='checkbox']:checked+.checkBox_custom {
+    background-image: url('../../public/images/checkbox_on.png');
 }
 
-label input[type="checkbox"]{
+label input[type="checkbox"] {
     display: none;
 }
 
-.bottomSheet{
+.bottomSheet {
     position: fixed;
     bottom: -100%;
     width: 100%;
     left: 0;
-    font-size:12px;
+    font-size: 12px;
     /* height: 80%; */
     background-color: white;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
@@ -105,15 +106,15 @@ label input[type="checkbox"]{
     transition: bottom 0.7s ease;
 }
 
-.useRef{
+.useRef {
     padding: 10px;
 }
 
-.useRef>div{
+.useRef>div {
     margin-bottom: 10px;
 }
 
-.useRef> div:nth-child(2) {
+.useRef>div:nth-child(2) {
     font-size: 14px;
 }
 
@@ -130,7 +131,7 @@ label input[type="checkbox"]{
     bottom: 0;
 }
 
-.startGory{
+.startGory {
     width: 100%;
     margin-top: 10px;
     padding: 10px;
@@ -140,15 +141,15 @@ label input[type="checkbox"]{
     font-size: 16px;
     cursor: pointer;
     background-color: #9a9af4;
-    color:white;
+    color: white;
 
 }
 
-.startGory.disabled{
+.startGory.disabled {
     background-color: #ACB4B9;
 }
 
-.toast_message{
+.toast_message {
     opacity: 0;
     display: none;
     position: fixed;
@@ -165,7 +166,7 @@ label input[type="checkbox"]{
     box-shadow: 3px 4px 11px 0px #00000040;
 }
 
-.toast_message.active{
+.toast_message.active {
     opacity: 1;
     display: block;
 }

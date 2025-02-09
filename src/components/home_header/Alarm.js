@@ -1,7 +1,7 @@
 import React from "react";
 
-const Alarm = () =>{
-    return(
+const Alarm = () => {
+    return (
         <div style={styles.container}>
             <img src="/images/alarm.png"></img>
         </div>
@@ -9,11 +9,13 @@ const Alarm = () =>{
 
 }
 
-const styles={
-    container:{
+const styles = {
+    container: {
         display: "flex",
+        position: "absolute",
+        top: "25px",
         alignItems: "center",
-        marginLeft: "150px",
+        right: "10px",
     }
 }
 

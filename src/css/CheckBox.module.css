@@ -1,0 +1,20 @@
+.checkBox_custom {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 10px;
+    background-image: url('../../public/images/checkbox_off.png');
+}
+
+input[type='checkbox']:checked+.checkBox_custom {
+    background-image: url('../../public/images/checkbox_on.png');
+}
+
+label input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: flex;
+}

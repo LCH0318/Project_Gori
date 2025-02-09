@@ -1,0 +1,35 @@
+.image-slider {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.feed-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.indicator-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.indicator-dot {
+    width: 8px;
+    height: 8px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, width 0.3s;
+}
+
+.indicator-dot.active {
+    background: #9484FB;
+    width: 16px;
+}

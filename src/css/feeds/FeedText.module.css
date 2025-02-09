@@ -1,0 +1,13 @@
+.feed-text p {
+    white-space: pre-line;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.toggle-text {
+    color: #9484FB;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}

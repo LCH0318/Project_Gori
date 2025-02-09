@@ -3,11 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import styles from "../css/Login.module.css";
 import KakaoLogin from "react-kakao-login";
+// import axios from "axios";
+import axios from "./utils/axiosInstance";
 // import NaverLogin from "../components/NaverLogin";
 // import LoginNaver from "react-naver-login";
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google";
+import { useAppContext } from "../contexts/AppContext";
 
 const Login = () => {
+    const { login } = useAppContext();
+
     const navigate = useNavigate();
 
     const handleLogin = (provider, providerId, email) => {
@@ -17,7 +22,7 @@ const Login = () => {
     const handleKakaoLogin = (response) => {
         const { profile } = response;
         const { kakao_account } = profile;
-        handleLogin("KAKAO", profile.id, kakao_account.email);
+        authentication("KAKAO", profile.id, kakao_account.email);
     }
 
     const handleNaverLogin = (response) => {
@@ -43,8 +48,30 @@ const Login = () => {
 
     const handleGoogleLogin = (response) => {
         const { email, sub } = jwtDecode(response.credential);
-        handleLogin("Google", sub, email);        
+        authentication("Google", sub, email);        
     }
+
+    const authentication = async (provider, providerId, email) => {
+        const userData = { email, provider, providerId };
+        try {
+            const { data } = await axios.post("/auth/login", userData);
+            login(data.token);
+            navigate("/");
+            // window.location.reload();
+        } catch (error) {
+            console.log(error);
+            test();
+            // handleLogin(provider, providerId, email);
+        }
+    }
+
+    const test = () => {
+        console.log(localStorage.getItem("token"))
+        login("testtoken");
+        navigate("/");
+        // window.location.reload();
+    }
+
 
     const findAcount = () =>{
         navigate("/FindAccount");
