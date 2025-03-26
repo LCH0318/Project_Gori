@@ -1,15 +1,15 @@
 import React from "react";
 
-const BackButton = ({onBack}) =>{
+const BackButton = ({ isOpen }) => {
     const handleBack = () => {
-        if (onBack) {
-            onBack();
+        if (isOpen) {
+            isOpen();
         } else {
             window.history.back();
         }
     }
 
-    return(
+    return (
         <>
             <img src="/images/headerImg.png" onClick={handleBack}></img>
         </>

@@ -1,16 +1,13 @@
-import React from "react";
-// import SetupLaterBtn from "./SetupLaterBtn";
-// import BackButton from "./BackButton";
+import React, { useState } from "react";
+import SetupLaterBtn from "./SetupLaterBtn";
+import BackButton from "./BackButton";
 
-const Header = ({onBack, leftComponent, rightComponent}) => {
-    return(
+const Header = ({ isOpen, title, isClose }) => {
+    return (
         <div style={style.container}>
-            <div style={style.left}>
-                {leftComponent}
-            </div>
-            <div style={style.right}>
-                {rightComponent}
-            </div>
+            <BackButton isOpen={true} />
+            <div>{title}</div>
+            <SetupLaterBtn isClose={false} />
         </div>
     );
 }

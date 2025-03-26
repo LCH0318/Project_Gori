@@ -25,7 +25,7 @@ const FeedImageSlider = ({ images }) => {
 
         if (diff > swipeThreshold) {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        } else if (diff < -swipeThreshold) {
+        } else if (diff < swipeThreshold) {
             setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
         }
     };
@@ -51,7 +51,7 @@ const FeedImageSlider = ({ images }) => {
             </div>
         </div>
     );
-    
+
 };
 
 export default FeedImageSlider;

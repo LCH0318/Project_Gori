@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import redirect from "react-router-dom";
 import Login from "./pages/Login";
 import SignupStep1 from "./pages/signup/SignupStep1";
 import SignupStep2 from "./pages/signup/SignupStep2";
@@ -16,6 +15,7 @@ import CreateSquad from "./pages/squad/CreateSquad";
 import Main from "./pages/Main";
 import { useAppContext } from "./contexts/AppContext";
 import CreateFeed from "./pages/feeds/CreateFeed";
+import UpdateFeed from "./pages/feeds/UpdateFeed";
 
 function App() {
   const { token } = useAppContext();
@@ -43,8 +43,9 @@ function App() {
       ) : (
         <>
           <Route path="/" element={<Main />} />
-          <Route path="CreateSquad" element={<CreateSquad />} />
-          <Route path="CreateFeed" element={<CreateFeed />} />
+          <Route path="/feed/new" element={<CreateFeed />} />
+          <Route path="/squad/new" element={<CreateSquad />} />
+          <Route path="/feed/edit/:id" element={<UpdateFeed />} />
         </>
       )}
     </Routes>

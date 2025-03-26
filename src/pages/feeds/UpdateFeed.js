@@ -1,9 +1,15 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import dummyFeeds from "../../dummies/dummyFeeds";
 import styles from "../../css/feeds/CreateFeed.module.css";
-import { useNavigate } from "react-router-dom";
+import { useParams, useLocation, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
-const CreateFeed = () => {
+
+const UpdateFeed = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { id } = useParams();
+    const feedId = parseInt(id);
+    const [feed, setFeed] = useState();
 
     const categories = [["건강/운동", "health"],
     ["맛집/카페", "cafe"], ["취미", "hobby"], ["나들이/여행", "trip"],
@@ -20,6 +26,27 @@ const CreateFeed = () => {
     const [isSendProcessing, setIsSendProcessing] = useState(false);
     // const [title, setTitle] = useState(false);
     const [errorMsg, setErrorMsg] = useState(null);
+
+    // api 호출해서 피드 불러오기기
+    // useEffect(() => {
+    //     if (location.state?.feed) {
+    //         setFeed({ ...location.state.feed, newImages: [], removedImages: [] });
+    //     } else {
+    //         axios.get(`/api/feeds/${id}`)
+    //             .then(response => setFeed(response.data))
+    //             .catch(error => console.error("피드 데이터 불러오기 오류:", error));
+    //     }
+    // }, [id, location.state]);
+
+    useEffect(() => {
+        const foundFeed = dummyFeeds.find(feed => feed.id === feedId);
+        if (foundFeed) {
+            setFeed({ ...foundFeed, newImages: [], removedImages: [] });
+        } else {
+            alert("피드를 찾을 수 없습니다.");
+            navigate(-1);
+        }
+    }, [id]);
 
     const showToastMessage = () => {
         setIsSendProcessing(true);
@@ -125,7 +152,7 @@ const CreateFeed = () => {
         <div>
             <div className={styles["header"]}>
                 <img src="/images/headerImg.png" onClick={handleBack} />
-                <h1>피드글 작성</h1>
+                <h1>피드글 수정</h1>
             </div>
             {!isCollapsed ? (
                 <>
@@ -153,10 +180,10 @@ const CreateFeed = () => {
                 <textarea
                     placeholder="자유롭게 이야기해보세요!"
                     maxLength="5000"
-                    value={content}
+                    value={feed.text}
                     onChange={handleTextChange}>
                 </textarea>
-                <p className={styles["text-count"]}>{content.length}/5,000</p>
+                <p className={styles["text-count"]}>{feed.text.length}/ 5,000</p>
             </div>
             <div className="image-upload-container">
                 <input
@@ -199,4 +226,4 @@ const CreateFeed = () => {
     );
 }
 
-export default CreateFeed;
+export default UpdateFeed;

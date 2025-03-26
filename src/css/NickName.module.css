@@ -5,7 +5,7 @@
     /* width: 100vw; */
 }
 
-.input-group input{
+.input-group input {
     margin-top: 30px;
     font-size: 16px;
     border: none;
@@ -21,7 +21,7 @@
     border-bottom: 1px black solid;
 }
 
-.input-group button{
+.input-group button {
     border: none;
     background-color: transparent;
     position: absolute;
@@ -29,22 +29,22 @@
     top: 125px;
 }
 
-.completeBtn button{
+.completeBtn button {
     font-size: 16px;
     color: #FFFFFF;
     width: 100%;
     background-color: #ACB4B9;
     position: absolute;
-    bottom:0%;
+    bottom: 0%;
     border: none;
     height: 45px;
 }
 
-.completeBtn button.active{
+.completeBtn button.active {
     color: #FFFFFF;
     background-color: #6F5CFA;
-}   
+}
 
-.red{
+.red {
     color: red;
 }

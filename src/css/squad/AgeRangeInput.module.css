@@ -1,0 +1,33 @@
+.age-range-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.age-input {
+    border: none;
+    border-bottom: 1px solid;
+    border-color: #f1f2f3;
+    /* border-style: ; */
+    height: 20px;
+    width: 40%;
+    text-align: center;
+    flex: 1;
+}
+
+.age-input:focus {
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    border-color: #7582BA;
+}
+
+.age-seperator {
+    color: #75828A;
+}
+
+.age-label {
+    color: #75828A;
+}

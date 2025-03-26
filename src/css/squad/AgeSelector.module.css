@@ -1,0 +1,16 @@
+.age-option {
+    border-radius: 20px;
+    background-color: #F1F2F3;
+    color: #ACB4B9;
+    border: none;
+    padding: 0px 16px;
+    height: 30px;
+    font-size: 16px;
+    overflow-x: auto;
+    margin: 5px;
+}
+
+.age-option.selected {
+    background-color: #E4DEFE;
+    color: #5343D7;
+}
