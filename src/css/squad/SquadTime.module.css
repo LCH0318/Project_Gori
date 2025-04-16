@@ -1,4 +1,4 @@
-.sheet-container {
+.modal-overlay {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -7,43 +7,125 @@
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     z-index: 100;
 }
 
-.sheet-handle {
-    position: fixed;
-    bottom: 0;
+.modal-content {
     background: white;
-    width: 90%;
-    padding: 20px;
-    text-align: center;
+    width: 100%;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.sheet-header {
+.modal-title {
     display: flex;
     align-items: center;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 10px 0;
+    text-align: center;
+    padding: 10px;
 }
 
-.sheet-header img {
+.modal-title img {
     height: 30px;
     width: 30px;
     margin-right: 10px;
 }
 
-.time-picker {
+.picker-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.picker-col {
+    width: 80px;
+    height: 140px;
+    overflow-y: auto;
+    text-align: center;
+    align-content: center;
+}
+
+.scroll-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scroll-item {
+    height: 30px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    scroll-snap-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-item.selected {
+    color: black;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.colon {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-container {
+    margin: 10px;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 30px;
+    display: inline-block;
+    background-size: cover;
+    margin-right: 10px;
+    background-image: url('../../../public/images/checkbox_off.png');
+}
+
+input[type='checkbox']:checked+.custom-checkbox {
+    background-image: url('../../../public/images/checkbox_on.png');
+}
+
+label input[type="checkbox"] {
+    display: none;
+}
+
+label {
+    display: flex;
+}
+
+.confirm-btn {
+    width: 100%;
+    background-color: #6F5CFA;
+    color: white;
+    position: fixed;
+    border: none;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+}
+
+/* .time-picker {
     display: flex;
     align-items: center;
     width: 100%;
     height: 168px;
-}
+} */
 
-.time-scroll-container {
+/* .time-scroll-container {
     align-items: center;
     justify-content: center;
     display: grid;
@@ -57,8 +139,9 @@
     height: 120px;
     overflow-y: scroll;
     scrollbar-width: none;
-}
+} */
 
+/* 
 .meridiem {
     overflow-y: scroll;
     width: 60px;
@@ -66,20 +149,19 @@
     margin-right: 25px;
     overflow-y: scroll;
     scrollbar-width: none;
-}
+} */
 
 /* .meridiem span {
     margin-top: 15px;
     margin-bottom: 15px;
 } */
 
-.time-item {
+/* .time-item {
     margin-top: 15px;
     margin-bottom: 17px;
 }
 
 .time-item.selected {
-    /* color: white; */
     font-size: 20px;
     font-weight: bold;
-}
+} */

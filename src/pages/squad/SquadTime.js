@@ -6,47 +6,80 @@ const minutes = ["00", "30"];
 
 const SquadTime = ({ isOpen, onClose, onSelect }) => {
 
-    const [meridiem, setMeridiem] = useState("오전");
-    const [hour, setHour] = useState(10);
-    const [minute, setMinute] = useState(0);
+    const [meridiem, setMeridiem] = useState(null);
+    const [hour, setHour] = useState(null);
+    const [minute, setMinute] = useState(null);
     const [isIndeterminate, setIsIndeterminate] = useState(false);
 
     const handleConfirm = () => {
         if (isIndeterminate) onSelect(null, null, null, true);
-        onSelect(meridiem, hour, minute, false);
+        else onSelect(hour, minute, meridiem, false);
         onClose();
     };
+
+    const handleIsIndeterminate = (status) => {
+        setIsIndeterminate(status);
+        if (status) {
+            setMeridiem(null);
+            setHour(null);
+            setMinute(null);
+        }
+    };
+
+    // const handleMeridiem = (val) => {
+    //     setIsIndeterminate(false);
+    //     setMeridiem(val);
+    // };
+
+    // const handleHour = (val) => {
+    //     setIsIndeterminate(false);
+    //     setHour(val);
+    // };
+
+    // const handleMinute = (val) => {
+    //     setIsIndeterminate(false);
+    //     setMinute(val);
+    // };
 
     if (!isOpen) return null;
 
     return (
-        <div className={styles["sheet-container"]}>
-            <div className={styles["sheet-handle"]}>
-                <div className={styles["sheet-header"]}>
+        <div className={styles["modal-overlay"]} onClick={onClose}>
+            <div className={styles["modal-content"]} onClick={(e) => e.stopPropagation()}>
+                <h3 className={styles["modal-title"]}>
                     <img src="/images/alram.png" /><span>몇 시에 모일까요?</span>
-                </div>
-                <div className={styles["time-picker"]}>
-                    <div className={styles["meridiem"]}>
-                        <span>오전</span>
-                        <span>오후</span>
+                </h3>
+                <div className={styles["picker-row"]}>
+                    <div className={styles["picker-col"]}>
+                        {["오전", "오후"].map((val, idx) => (
+                            <div
+                                key={`meridium_${idx}`}
+                                className={`${styles['scroll-item']} ${meridiem === val ? styles["selected"] : ""}`}
+                                onClick={() => !isIndeterminate && setMeridiem(val)}
+                            >
+                                {val}
+                            </div>
+                        ))}
                     </div>
-                    <div className={styles["time-scroll-container"]}>
-                        <div className={styles["time-scroll"]}>
+                    <div className={styles["picker-col"]}>
+                        <div className={styles["scroll-list"]}>
                             {hours.map((h) => (
                                 <div
                                     key={`hour_${h}`}
-                                    className={`${styles["time-item"]} ${h === hour ? styles["selected"] : ""}`}
-                                    onChange={() => setHour(h)}
+                                    className={`${styles["scroll-item"]} ${h === hour ? styles["selected"] : ""}`}
+                                    onClick={() => !isIndeterminate && setHour(h)}
                                 >{h}</div>
                             ))}
                         </div>
-                        <span className={styles["colon"]}>:</span>
-                        <div className={styles["time-scroll"]}>
+                    </div>
+                    <span className={styles["colon"]}>:</span>
+                    <div className={styles["picker-col"]}>
+                        <div className={styles["scroll-list"]}>
                             {minutes.map((m) => (
                                 <div
                                     key={`minute_${m}`}
-                                    className={`${styles["time-item"]} ${m === minute ? styles["selected"] : ""}`}
-                                    onClick={() => setMinute(m)}
+                                    className={`${styles["scroll-item"]} ${m === minute ? styles["selected"] : ""}`}
+                                    onClick={() => !isIndeterminate && setMinute(m)}
                                 >{m}</div>
                             ))}
                         </div>
@@ -56,11 +89,11 @@ const SquadTime = ({ isOpen, onClose, onSelect }) => {
                     <input
                         type="checkbox"
                         checked={isIndeterminate}
-                        onChange={() => setIsIndeterminate(!isIndeterminate)}
-                    /><span>미정</span>
+                        onChange={() => handleIsIndeterminate(!isIndeterminate)}
+                    /><span className={styles['custom-checkbox']}></span>미정
                 </label>
                 <button className={styles["confirm-btn"]}
-                    onClick={onClose}
+                    onClick={handleConfirm}
                 >선택 완료</button>
             </div>
         </div>
