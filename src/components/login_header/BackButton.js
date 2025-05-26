@@ -1,4 +1,5 @@
 import React from "react";
+// import styles from "../login_header/backButton.module.css";
 
 const BackButton = ({ isOpen }) => {
     const handleBack = () => {
@@ -11,9 +12,20 @@ const BackButton = ({ isOpen }) => {
 
     return (
         <>
-            <img src="/images/headerImg.png" onClick={handleBack}></img>
+            <img
+                style={style.container}
+                src="/images/headerImg.png" onClick={handleBack}></img>
         </>
     );
 };
+
+const style = {
+    container: {
+        position: "absolute",
+        left: "0",
+        top: "0",
+        margin: "20px 10px"
+    }
+}
 
 export default BackButton;

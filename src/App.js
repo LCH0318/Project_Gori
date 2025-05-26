@@ -16,6 +16,7 @@ import Main from "./pages/Main";
 import { useAppContext } from "./contexts/AppContext";
 import CreateFeed from "./pages/feeds/CreateFeed";
 import UpdateFeed from "./pages/feeds/UpdateFeed";
+import CreateChatting from "./pages/chat/CreateChatting";
 
 function App() {
   const { token } = useAppContext();
@@ -46,6 +47,7 @@ function App() {
           <Route path="/feed/new" element={<CreateFeed />} />
           <Route path="/squad/new" element={<CreateSquad />} />
           <Route path="/feed/edit/:id" element={<UpdateFeed />} />
+          <Route path="chatting" element={<CreateChatting />} />
         </>
       )}
     </Routes>

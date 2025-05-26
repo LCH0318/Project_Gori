@@ -24,9 +24,12 @@ const AgeSelector = ({ onChange }) => {
             }
         } else {
             setCustomAge(false);
-            setAgeMin("");
-            setAgeMax("");
-            onChange({ ageCategory: age, ageMin: null, ageMax: null });
+            const min = parseInt(age.replace("대", ""), 10);
+            setAgeMin(min);
+            setAgeMax(min + 9);
+            // setAgeMin("");
+            // setAgeMax("");
+            onChange({ ageCategory: age, ageMin, ageMax });
         }
     };
 

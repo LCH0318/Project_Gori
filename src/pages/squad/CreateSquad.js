@@ -90,7 +90,7 @@ const CreateSquad = () => {
             title: false
         }));
         if (value.length > 51) {
-            showToastMessage("제목은 최대 50자자까지만 입력이 가능해요");
+            showToastMessage("제목은 최대 50자까지만 입력이 가능해요");
         }
     }
 
@@ -124,14 +124,17 @@ const CreateSquad = () => {
     const handleGenderBtn = (e) => {
         setWarningMsg(prev => ({
             ...prev,
-            age: false
+            gender: false
         }))
         setSelectedGender(e);
     }
 
     const handleAgeChange = (data) => {
+        setWarningMsg(prev => ({
+            ...prev,
+            age: false
+        }))
         setAgeData(data);
-
     }
 
     const handleContent = (e) => {
@@ -240,11 +243,11 @@ const CreateSquad = () => {
         newWarnings.male = selectedGender === null;
         newWarnings.age = ageData.ageMax === null || ageData.ageMin === null;
 
-
         setWarningMsg(newWarnings);
         console.log(newWarnings);
         if (!squadName.trim() || selectedCategory === null || locationButtonTxt || selectedDate || participantsCount || selectedGender || ageData)
-            return showToastMessage("입력되지 않은 내용이 있어요.");
+            console.log(!squadName.trim(), selectedCategory, locationButtonTxt, selectedDate, participantsCount, selectedGender, ageData);
+        showToastMessage("입력되지 않은 내용이 있어요.");
     }
 
     return (
