@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import Login from "./pages/Login";
+// import Login from "./pages/Login";
 import SignupStep1 from "./pages/signup/SignupStep1";
 import SignupStep2 from "./pages/signup/SignupStep2";
 import SignupStep3 from "./pages/signup/SignupStep3";
@@ -25,8 +25,9 @@ function App() {
     <Routes>
       {!token ? (
         <>
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
+          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/" element={<Navigate to="/SignupStep1" replace />} />
           <Route path="/SignupStep1" element={<SignupStep1 />} />
           {/* <Route path=":name" element={<SignupStep2/>}/> */}
           <Route path="/SignupStep2" element={<SignupStep2 />} />
