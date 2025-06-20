@@ -6,7 +6,6 @@ import styles from "../../css/feeds/HomeFeed.module.css"
 import FeedItem from "../../components/feed/FeedItem";
 import EditDeleteModel from "../../components/common/EditDeleteModel";
 import ConfirmDeleteModel from "../../components/common/ConfirmDeleteModel";
-import UpdateFeed from "./UpdateFeed";
 
 const HomeFeed = () => {
     const navigate = useNavigate();
