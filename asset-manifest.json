@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Project_Gori/static/css/main.bf51747b.css",
+    "main.js": "/Project_Gori/static/js/main.06d0185a.js",
+    "static/js/453.0dd5a7b4.chunk.js": "/Project_Gori/static/js/453.0dd5a7b4.chunk.js",
+    "index.html": "/Project_Gori/index.html",
+    "main.bf51747b.css.map": "/Project_Gori/static/css/main.bf51747b.css.map",
+    "main.06d0185a.js.map": "/Project_Gori/static/js/main.06d0185a.js.map",
+    "453.0dd5a7b4.chunk.js.map": "/Project_Gori/static/js/453.0dd5a7b4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf51747b.css",
+    "static/js/main.06d0185a.js"
+  ]
+}
