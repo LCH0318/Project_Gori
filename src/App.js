@@ -27,13 +27,10 @@ function App() {
         <>
           {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
           {/* <Route path="/login" element={<Login />} /> */}
-          <Route path="/" element={<Navigate to="/SignupStep1" replace />} />
+          <Route path="/" element={<Navigate to="/feed/new" replace />} />
           <Route path="/SignupStep1" element={<SignupStep1 />} />
-          {/* <Route path=":name" element={<SignupStep2/>}/> */}
           <Route path="/SignupStep2" element={<SignupStep2 />} />
           <Route path="/SignupStep3" element={<SignupStep3 />} />
-          {/* <Route path=":birth" element={<SignupStep3/>}/>
-          <Route path=":gender" element={<SignupStep4/>}></Route> */}
           <Route path="SignupStep4" element={<SignupStep4 />} />
           <Route path="/auth/signin/naver" Component={<RedirectURI />}></Route>
           <Route path="SignupStep5" element={<SignupStep5 />} />
