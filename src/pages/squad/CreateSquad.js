@@ -255,7 +255,7 @@ const CreateSquad = () => {
             <div className={styles["container"]}>
                 <div className={styles["header"]}>
                     <img src="/images/headerImg.png" onClick={handleBack} />
-                    <p>모임글 작성</p>
+                    <h1>모임글 작성</h1>
                 </div>
 
                 <div className={styles["squadName"]}>

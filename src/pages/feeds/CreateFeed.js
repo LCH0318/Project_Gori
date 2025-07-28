@@ -119,7 +119,7 @@ const CreateFeed = () => {
     }
 
     return (
-        <div>
+        <div className={styles["container"]}>
             <div className={styles["header"]}>
                 <img src="/images/headerImg.png" onClick={handleBack} />
                 <h1>피드글 작성</h1>
