@@ -4,6 +4,10 @@
     margin: 20px 10px;
 }
 
+.buttonLength {
+    width: 110px;
+}
+
 .locationButton button {
     border: none;
     border-color: #E4DEFE;

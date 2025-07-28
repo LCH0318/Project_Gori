@@ -13,6 +13,8 @@ const BottomNavigation = () => {
     const openBottomSheet = () => {
         if (bottomSheetRef.current) {
             bottomSheetRef.current.classList.add(styles["active"]);
+        } else {
+            bottomSheetRef.current.remove(styles["active"]);
         }
     }
 
@@ -52,7 +54,9 @@ const BottomNavigation = () => {
                         src="/images/userIcon.png" />모임
                     <div>관심있는 주제로 모여봐요</div>
                 </div>
-                <div className={styles["bottomSheet-content"]}><img className={styles["bottomSheet-image"]} src="/images/chatIcon.png" />채팅
+                <div className={styles["bottomSheet-content"]}>
+                    <img className={styles["bottomSheet-image"]} onClick={() => navigate('/chatting/new')}
+                        src="/images/chatIcon.png" />채팅
                     <div>관심있는 주제로 대화해봐요</div>
                 </div>
             </div>

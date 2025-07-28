@@ -14,6 +14,7 @@ const CreateChatting = () => {
     const [peopleCount, setPeoleCount] = useState("");
     const [toastVisible, setToastVisible] = useState(false);
     const [toastContent, setToastContent] = useState(null);
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
     const showToastMessage = (message) => {
         setToastContent(message);
@@ -25,15 +26,21 @@ const CreateChatting = () => {
     }
 
     const handleCategorySelect = (category) => {
-        setSelectedCategory(category === selectedCategory ? null : category);
+        // setSelectedCategory(category === selectedCategory ? null : category);
+        if (selectedCategory != null) {
+            setIsCollapsed(!isCollapsed);
+        } else {
+            setSelectedCategory(category);
+            setIsCollapsed(false);
+        }
     }
 
-    const isHeaderSheetOpen = () => {
-
-    }
-
-    const isHeaderSheetClose = () => {
-
+    const handleBack = ({ onBack }) => {
+        if (onBack) {
+            onBack();
+        } else {
+            window.history.back();
+        }
     }
 
     const handleTitleTextChange = (e) => {
@@ -54,49 +61,46 @@ const CreateChatting = () => {
     }
 
     const handleToastMessage = (e) => {
-        if (peopleCount < 2) {
-            showToastMessage("인원은 본인포함 최소 2명부터 입력 가능해요");
-        } else {
-            setToastContent(false);
-        }
         if (!titleText) {
             showToastMessage("주제를 선택해주세요")
+        } else if (!chatText) {
+            showToastMessage("내용을 입력해주세요")
+        } else if (peopleCount < 2) {
+            showToastMessage("인원은 본인포함 최소 2명부터 입력 가능해요")
         } else {
             setToastContent(false);
-        }
-        if (!chatText) {
-            showToastMessage("내용을 입력해주세요요")
-        } else {
-            setToastContent(false);
-        }
-        if (peopleCount > 3 && !titleText && !chatText) {
-            <Chatting />
         }
     }
 
     return (
         <div className={styles["container"]}>
             <div className={styles["chattingHeader"]}>
-                <Header
-                    isOpen={isHeaderSheetOpen}
-                    title="채팅방 만들기"
-                    isClose={isHeaderSheetClose}
-                />
-            </div>
-            <div className={styles["chattingCategory"]}>
-                <div>어떤 주제의 채팅방인가요?</div>
-                <div className={styles["category-container"]}>
-                    {categories.map((category) => (
-                        <button
-                            key={category[1]}
-                            className={`${styles["category-item"]} ${selectedCategory === category[1] ? styles["active"] : ""}`}
-                            onClick={() => handleCategorySelect(category[1])}
-                        >
-                            <span className={styles["category-label"]}>{category[0]}</span>
-                        </button>
-                    ))}
+                <div className={styles["header"]}>
+                    <img src="/images/headerImg.png" onClick={handleBack} />
+                    <p>모임글 작성</p>
                 </div>
             </div>
+            {!isCollapsed ? (
+                <div className={styles["chattingCategory"]}>
+                    <div>어떤 주제의 채팅방인가요?</div>
+                    <div className={styles["category-container"]}>
+                        {categories.map((category) => (
+                            <button
+                                key={category[1]}
+                                className={`${styles["category-item"]} ${selectedCategory !== null && selectedCategory[1] === category[1] ? styles["active"] : ""}`}
+                                onClick={() => handleCategorySelect(category)}
+                            >
+                                <span className={styles["category-label"]}>{category[0]}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            ) : (
+                <div className={styles["selected-category"]} onClick={() => setIsCollapsed(false)}>
+                    <span>{selectedCategory[0]}</span>
+                    <img className={styles["arrow"]} src="/images/cursor.png"></img>
+                </div>
+            )}
 
             <div className={styles["chattingTitle"]}>
                 <input

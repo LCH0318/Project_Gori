@@ -77,7 +77,8 @@ const Main = () => {
             <Session />
             <CategoryList />
             <div className={styles["locationButton"]}>
-                <button onClick={openRegionMainSheet}>
+                <button onClick={openRegionMainSheet}
+                    className={styles["buttonLength"]}>
                     <img src="/images/location.png"></img>
                     {locationButtonTxt}
                     {locationButtonTxt !== '지역으로 찾기' ? <img src="/images/locationClearBtn.png" onClick={() => { clearBtn() }} /> : ""}

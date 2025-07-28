@@ -1,6 +1,5 @@
 import React from "react";
 import { HashRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-// import Login from "./pages/Login";
 import SignupStep1 from "./pages/signup/SignupStep1";
 import SignupStep2 from "./pages/signup/SignupStep2";
 import SignupStep3 from "./pages/signup/SignupStep3";
@@ -45,7 +44,7 @@ function App() {
           <Route path="/feed/new" element={<CreateFeed />} />
           <Route path="/squad/new" element={<CreateSquad />} />
           <Route path="/feed/edit/:id" element={<UpdateFeed />} />
-          <Route path="chatting" element={<CreateChatting />} />
+          <Route path="/chatting/new" element={<CreateChatting />} />
         </>
       )}
     </Routes>

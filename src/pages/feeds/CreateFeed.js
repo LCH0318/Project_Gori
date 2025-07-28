@@ -38,10 +38,7 @@ const CreateFeed = () => {
     }
 
     const handleCategorySelect = (category) => {
-        // setSelectedCategory(category === selectedCategory ? null : category);
-        // console.log(category);
-        // setTitle(true);
-        if (selectedCategory !== null && selectedCategory[0] === category[0]) {
+        if (selectedCategory !== null) {
             setIsCollapsed(!isCollapsed);
         } else {
             setSelectedCategory(category);
@@ -129,7 +126,7 @@ const CreateFeed = () => {
             </div>
             {!isCollapsed ? (
                 <>
-                    <p className={styles["inputTitle"]} placeholder="어떤 주제의 이야기인가요?" disabled></p>
+                    <div className={styles["inputTitle"]}>어떤 주제의 이야기인가요?</div>
                     <div className={styles["category-container"]}>
                         {categories.map((category) => (
                             <button

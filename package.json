@@ -38,7 +38,6 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  "homepage": "https://LCH0318.github.io/Project_Gori",
   "eslintConfig": {
     "extends": [
       "react-app",
