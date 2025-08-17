@@ -379,7 +379,6 @@ const CreateSquad = () => {
                     onClose={hanldeTimeSquadClose}
                     onSelect={handleTimeSquadSelect}
                 />
-                {/* 컴포넌트 3개 만들어서 불러오기기 */}
                 {toastContent && <div className={`${styles["toast_message"]} ${styles["active"]}`}>{toastContent}</div>}
             </div>
             {<button className={styles["squadConfirmBtn"]} onClick={handleConfirm}>모임글 작성완료</button>}

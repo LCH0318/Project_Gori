@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/login_header/Header";
 import styles from "../../css/chat/CreateChatting.module.css";
-import Chatting from "../chat/Chatting";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const CreateChatting = () => {
     const categories = [["건강/운동", "health"],
@@ -15,6 +15,8 @@ const CreateChatting = () => {
     const [toastVisible, setToastVisible] = useState(false);
     const [toastContent, setToastContent] = useState(null);
     const [isCollapsed, setIsCollapsed] = useState(false);
+    const [isChattingModalOpen, setIsChattingModalOpen] = useState(false);
+    const navigate = useNavigate();
 
     const showToastMessage = (message) => {
         setToastContent(message);
@@ -61,14 +63,19 @@ const CreateChatting = () => {
     }
 
     const handleToastMessage = (e) => {
-        if (!titleText) {
+        if (!selectedCategory || !titleText) {
             showToastMessage("주제를 선택해주세요")
         } else if (!chatText) {
             showToastMessage("내용을 입력해주세요")
-        } else if (peopleCount < 2) {
+        } else if (Number(peopleCount) < 2) {
             showToastMessage("인원은 본인포함 최소 2명부터 입력 가능해요")
         } else {
-            setToastContent(false);
+            navigate("/chatting", {
+                state: {
+                    titleText,
+                    peopleCount
+                }
+            });
         }
     }
 
@@ -77,7 +84,7 @@ const CreateChatting = () => {
             <div className={styles["chattingHeader"]}>
                 <div className={styles["header"]}>
                     <img src="/images/headerImg.png" onClick={handleBack} />
-                    <p>모임글 작성</p>
+                    <h1>채팅방 만들기</h1>
                 </div>
             </div>
             {!isCollapsed ? (

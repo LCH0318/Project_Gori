@@ -5,6 +5,35 @@
 }
 
 .chattingHeader {
+    position: relative;
+    left: 10px;
+    width: 90%;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 15px;
+    position: relative;
+    display: flex;
+    margin-top: 10%;
+    align-items: center;
+    justify-content: center;
+}
+
+.header img {
+    position: absolute;
+    left: 0px;
+    top: 32px;
+}
+
+.chattingHeader {
     width: 77vw;
 }
 
@@ -54,6 +83,8 @@
     margin-top: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
+    /* justify-items: center; */
+    align-items: center;
 }
 
 .titleContainer {
@@ -61,6 +92,7 @@
     width: 100%;
     height: 50px;
     outline: none;
+    display: flex;
     font-size: 18px;
     font-weight: bolder;
 }

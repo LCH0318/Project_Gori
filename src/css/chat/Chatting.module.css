@@ -1,0 +1,110 @@
+.container {
+    position: relative;
+    left: 10px;
+    width: 93%;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    position: relative;
+}
+
+.header img {
+    text-align: left;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+.header p {
+    text-align: right;
+    font-size: 17px;
+    font-weight: bold;
+    color: #6F5CFA;
+}
+
+.chat {
+    background-color: #F1F2F3;
+    position: fixed;
+    left: -10px;
+    height: 100vh;
+    width: 103%;
+}
+
+.todayDate {
+    background-color: #E3E6E8;
+    position: fixed;
+    left: 20px;
+    width: 88%;
+    height: auto;
+    border-radius: 7px;
+}
+
+.todayDate p {
+    color: #75828A;
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    font-size: 13px;
+}
+
+/* .notice {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.noticeText {
+    color: #6F5CFA;
+    margin-left: 20px;
+    white-space: nowrap;
+} */
+
+.notice {
+    margin-left: 20px;
+    width: 100%;
+}
+
+.notice p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-right: 20px;
+    padding: 15px;
+}
+
+.noticeText {
+    color: #6F5CFA;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.toggle-text {
+    color: #9484FB;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    position: absolute;
+    right: 15px;
+}
+
+/* 
+사용자가 쓰는 글짜는 3A4145
+날짜와 시간은 75828A
+날짜 테두리 E3E6E8
+대화 테두리 FFFFFF
+삭제 메시지 919BA1
+
+*/
