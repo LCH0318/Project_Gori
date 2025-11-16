@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import styles from "../css/Login.module.css";
 import KakaoLogin from "react-kakao-login";
-// import axios from "axios";
+// import axios from "axios"; 
 import axios from "./utils/axiosInstance";
 // import NaverLogin from "../components/NaverLogin";
 // import LoginNaver from "react-naver-login";
@@ -37,7 +37,7 @@ const Login = () => {
                 Authorization: `Bearer ${accessToken}`,
             },
         })
-            .then((res) =>  res.json())
+            .then((res) => res.json())
             .then((data) => {
                 console.log("user : ", data.response);
             })
@@ -48,7 +48,7 @@ const Login = () => {
 
     const handleGoogleLogin = (response) => {
         const { email, sub } = jwtDecode(response.credential);
-        authentication("Google", sub, email);        
+        authentication("Google", sub, email);
     }
 
     const authentication = async (provider, providerId, email) => {
@@ -73,7 +73,7 @@ const Login = () => {
     }
 
 
-    const findAcount = () =>{
+    const findAcount = () => {
         navigate("/FindAccount");
     }
 
@@ -87,9 +87,9 @@ const Login = () => {
 
     return (
         <>
-            <div className="login_container">
-                <div className="logo">
-                    <img src="/images/logo.png" alt = "404" id="logo" />
+            <div className={styles["login_container"]}>
+                <div className={styles["logo"]}>
+                    <img src="/images/logo.png" alt="404" id="logo" />
                 </div>
                 <div className={styles["recent_login"]}>
                     <button onClick={() => findAcount()}><img src="/images/ic_alert.png"></img>이전에 가입한 적이 있으신가요?</button>
@@ -115,13 +115,13 @@ const Login = () => {
                             onError={(err) => console.log(err)}
                             scope="profile email id"
                         />
-                    {/* <button type="button" className="last_login">마지막 로그인</button> */}
+                        {/* <button type="button" className="last_login">마지막 로그인</button> */}
                     </GoogleOAuthProvider>
                     {/* <button type="button" onClick={() => handleLogin('KAKAO')} className="kakao">카카오 로그인</button> */}
                     {/* <button type="button" onClick={() => test()} className="naver">네이버 로그인</button> */}
                     {/* <button type="button" onClick={() => handleLogin('GOOGLE')} className="google">구글 로그인</button> */}
-                    
-                </div>  
+
+                </div>
             </div>
         </>
     );

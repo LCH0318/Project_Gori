@@ -17,6 +17,7 @@ import CreateFeed from "./pages/feeds/CreateFeed";
 import UpdateFeed from "./pages/feeds/UpdateFeed";
 import CreateChatting from "./pages/chat/CreateChatting";
 import Chatting from "./components/chatting/Chatting";
+import Login from "./pages/Login";
 
 function App() {
   const { token } = useAppContext();
@@ -25,15 +26,15 @@ function App() {
     <Routes>
       {!token ? (
         <>
-          {/* <Route path="/" element={<Navigate to="/login" replace />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
-          <Route path="/" element={<Navigate to="/feed/new" replace />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/" element={<Navigate to="/feed/new" replace />} /> */}
           <Route path="/SignupStep1" element={<SignupStep1 />} />
           <Route path="/SignupStep2" element={<SignupStep2 />} />
           <Route path="/SignupStep3" element={<SignupStep3 />} />
-          <Route path="SignupStep4" element={<SignupStep4 />} />
+          <Route path="/SignupStep4" element={<SignupStep4 />} />
           <Route path="/auth/signin/naver" Component={<RedirectURI />}></Route>
-          <Route path="SignupStep5" element={<SignupStep5 />} />
+          <Route path="/SignupStep5" element={<SignupStep5 />} />
           <Route path="Verification" element={<Verification />} />
           <Route path="FindAccount" element={<FindAccount />} />
           <Route path="NickNameScreen" element={<NickNameScreen />} />

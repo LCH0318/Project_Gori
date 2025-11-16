@@ -1,23 +1,23 @@
-.login_container{
-    width: 90%;
-    max-width: 400px;
+.login_container {
+    width: 100vw;
+    /* max-width: 100%; */
     background-color: white;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
 }
 
-.logo img{
+.logo img {
     width: 100px;
     position: relative;
     padding: 5px;
 }
 
-.login_container .recent_login p{
+.login_container .recent_login p {
     color: #9a9af4;
     margin-bottom: 20px;
 }
 
-.kakao{
+.kakao {
     width: 100%;
     height: 40px;
     font-size: 16px;
@@ -27,7 +27,7 @@
     margin-bottom: 20px;
 }
 
-.naver{
+.naver {
     width: 100%;
     height: 40px;
     font-size: 16px;
@@ -38,18 +38,18 @@
     color: white;
 }
 
-.google{
+.google {
     width: 100%;
     height: 40px;
     font-size: 16px;
     background-color: white;
-    border: 1px  solid #ddd;
+    border: 1px solid #ddd;
     border-radius: 5px;
     margin-bottom: 20px;
-    color:#444;
+    color: #444;
 }
 
-.last_login{
+.last_login {
     color: white;
     border: none;
     border-radius: 15px;
@@ -57,10 +57,10 @@
     height: 30px;
     width: 120px;
     font-size: 14px;
-    
+
 }
 
-.recent_login button{
+.recent_login button {
     display: flex;
     border: solid 1px;
     border: none;
@@ -68,5 +68,5 @@
     background-color: #E4DEFE;
     color: #5343D7;
     font-size: 15px;
-    
+
 }
